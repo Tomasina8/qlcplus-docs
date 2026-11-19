@@ -1,13 +1,13 @@
 ---
-название: 'Глоссарий и понятия'
+название: 'Термины и понятия'
 дата: '19:56 17-11-2026'
 ---
 
-Q Light Controller Plus (сокращённо QLC+) предназначен для управления осветительным оборудованием, используемым в различных видах деятельности, например, живые концерты, театры и т.д. Основная цель QLC+ заключается в том, чтобы превзойти коммерческие пульты управления светом без необходимости использования 500-страничного руководства благодаря интуитивно понятному и гибкому пользовательскому интерфейсу.
+Q Light Controller Plus (сокращённо QLC+) предназначена для управления осветительным оборудованием, используемым в различных видах деятельности, например, живые концерты, театры и т.д. Основная цель QLC+ заключается в том, чтобы превзойти коммерческие пульты управления светом без необходимости использования 500-страничного руководства благодаря интуитивно понятному и гибкому пользовательскому интерфейсу.
 
 Эта страница содержит определения в алфавитном порядке, чтобы облегчить поиск по конкретной теме.
 
-### ! [](../audio.svg) Аудио
+### ! [](../audio.svg) Аудио (Audio)
 
 Аудио [функция](#functions) - объект, представляющий аудиофайл, хранящийся на диске.  
 QLC+ поддерживает самые распространённые аудиоформаты, такие как Wave, MP3, M4A, Ogg и Flac. Поддержка моно- и стереоканалов и несколько частот дискретизации, таких как 44,1 кГц, 48 кГц и т.д.  
@@ -67,7 +67,7 @@ Click And Go - это технология, которая позволяет о
 
 QLC+ поддерживает неограниченное количество вселенных (изначально есть 4, но при необходимости можно добавить больше). Они не обязательно должны быть подключены к оборудованию DMX. Фактическая аппаратная абстракция (независимо от того, является ли она аналоговой (0-10 В), DMX или каким-либо другим методом) достигается через [output plugins](#input-output-plugins).
 
-### ! [](../efx.svg) EFX
+### ! [](../efx.svg) EFX (Эффекты)
 
 EFX [function](#functions) в основном используется для автоматизации движущихся огней (например, сканеров и движущихся головок), хотя он также может автоматизировать значения RGB или Dimmer недвижущихся огней. EFX может создавать сложные математические пути на плоскости Х-Y, которые преобразуются в значения DMX для поля и наклона устройства или каналов RGB или Dimmer.
 
@@ -105,131 +105,131 @@ EFX [function](#functions) в основном используется для �
 
 Многие производители выпускают свои световые приборы таким образом, что они имеют несколько различных наборов каналов. Например, сканер может иметь два варианта конфигурации: один для только 8-битных каналов перемещения (1x pan, 1x tilt) и другой для 16-битных каналов перемещения (2x pan, 2x tilt). Вместо создания совершенно нового определения прибора для каждого варианта, они были объединены в рамках определений прибора QLC+ в понятие Режим. Другие программы управления светом иногда называют режимы «личностью».
 
-### ![](../functions2.svg) Functions
+### ![](../functions2.svg) Functions (Функции)
 
-The number of functions is practically unlimited. Functions are used to automate the setting of values to DMX channels. Each function type has its own way of automating lights.
+Количество функций практически не ограничено. Функции используются для автоматизации настройки значений в DMX-каналах. Каждый тип функции имеет свой собственный способ автоматизации освещения.
 
-The function types are:
+Типы функций:
 
-*   [Scene](#scene)
+*   [Сцена](#сцена)
 *   [Chaser](#chaser)
-*   [Sequence](#sequence)
+*   [Последовательность](#последовательность)
 *   [EFX](#efx)
 *   [RGB Matrix](#rgb-matrix)
-*   [Collection](#collection)
-*   [Show](#show)
-*   [Audio](#audio)
-*   [Video](#video)
+*   [Коллекция](#коллекция)
+*   [показать](#показать)
+*   [Аудио](#аудио)
+*   [Видео](#видео)
 
-Each function can be named and, although the name is not used to uniquely identify individual functions, users are encouraged to name their functions in some systematic and concise way to help identify each of them. For your own comfort.
+Каждая функция может быть названа на усмотрение оператора, и, хотя название не используется для уникальной идентификации отдельных функций, операторам рекомендуется назвать их (функции) каким-либо внятным и кратким способом, чтобы помочь идентифицировать каждую из них в дальнейшем. Для вашего собственного удобства.
 
-Each function has its own speed settings:
+Каждая функция имеет свои параметры скорости:
 
-*   **Fade In:** The time used to fade HTP (in Scenes also LTP) channels to their target value
-*   **Fade Out:** The time used to fade HTP/intensity channels back to zero
-*   **Duration:** The duration of the current step (not applicable on Scenes)
+*   **Fade In (появление):** Время, используемое для сглаживания каналов HTP (в сценах также LTP) от нуля до целевого значения
+*   **Fade Out (затухание):** Время, используемое для сглаживания каналов HTP/интенсивности до нуля
+*   **Длительность:** Продолжительность текущего этапа (не применимо к сценам)
 
 ### Grand Master
 
-The Grand Master is used as the final master slider before values are written to the actual physical DMX hardware. Usually, the Grand Master affects only **Intensity** channels, but can also be changed to effect the values of **all** channels.
+Grand Master используется в качестве финального мастер-ползунка до того, как значения будут отправлены на реальное физическое DMX-оборудование. Обычно Grand Master влияет только на каналы **Яркость**, но также может быть изменен для влияния значений **всех** каналов.
 
-The Grand Master has also two **Value Modes** that control the way _how_ the Grand Master affects channel values:
+У Grand Master также есть два **режима значений**, которые контролируют то, как он влияет на значения канала:
 
-*   Reduce: Affected channels' values are reduced by a percentage set with the Grand Master slider. For example, Grand Master at 50% will result in all affected channels being reduced to 50% of their **current** values.
-*   Limit: Affected channels cannot get larger values than the value set with the Grand Master slider. For example, Grand Master at 127 will result in all the affected channels' maximum values being limited at exactly 127.
+*   Уменьшить: значения затронутых каналов сокращаются на процентное значение с помощью ползунка Grand Master. Например, Grand Master 50% приведет к тому, что все затронутые каналы будут сокращены до 50% их **текущих** значений.
+*   Ограничить: затронутые каналы не могут превышать значение, установленное с помощью ползунка Grand Master. Например, Grand Master 127 приведет к тому, что максимальные значения всех затронутых каналов будут ограничены ровно на 127.
 
-### Head
+### Излучатель (Голова в ранних версиях QLC+)
 
-A head represents an individual light output device in a fixture. Usually, a single fixture contains exactly one output, like the lens, the bulb, or a set of LEDs. There is, however, an increasing number of fixtures on the market that, although treated as a single fixture, have multiple light output devices, i.e. heads.
+Излучатель представляет собой отдельный блок светоизлучения в приборе. Обычно один прибор содержит только один выход: линза, лампа или модуль светодиодов. Однако на рынке растет число приборов, которые, хотя и рассматриваются как единое устройство, имеют несколько светоизлучающих устройств, то есть голов.
 
-For example, you might have a RGB LED bar fixture that is assembled onto a single chassis and as such it appears as a single fixture with one DMX input and one DMX output. However, it is actually comprised of four separate RGB LED "fixtures". These separate fixtures are treated in QLC+ as heads; they share some properties with their sibling heads, they can be controlled individually, but they might also have a master intensity control that controls the light output of all the heads together.
+Например, у вас может быть прибор RGB-светодиодной панели, которая собрана в одном корпусе и поэтому выглядит как единая установка с одним входом DMX и одним выходом DMX. Однако на самом деле он состоит из четырёх отдельных RGB LED модулей, каждым из которых можно управлять отдельно. Эти отдельные модули рассматриваются в QLC+ как излучатели; они имеют некоторые свойства с излучателями своих братьев, их можно контролировать по отдельности, но у них также может быть общий контроль яркости, который контролирует световую интенсивность всех модулей вместе.
 
-Each head belongs to a [Fixture Mode](#fixture-mode) because in one mode, a fixture might provide enough channels to control each of its heads individually while in another mode, only a handful of channels might be provided for controlling all the heads simultaneously.
+Каждый излучатель относится к [режиму прибора] (#fixture-mode), потому что в одном режиме прибора может обеспечивать достаточное количество каналов для управления каждой из своих излучателей отдельно, а в другом - только горстку каналов для одновременного управления всеми излучателями.
 
-### HTP (Highest Takes Precedence)
+### HTP (правило приоритета наивысшего значения)
 
-HTP is a rule that decides what level is sent to out to a DMX universe by a channel when the channel is being controlled by more than one [function](#functions) or Virtual Console widget. Generally, intensity channels obey the HTP rule. This includes generic intensity channels used to control _light intensity_ with dimmers and also channels controlling the intensity of a color, typically in an LED fixture.
+HTP - это правило, которое определяет уровень, отправляемый каналом в вселенную DMX, когда канал контролируется несколькими [функциями] (#functions) или виджетом Виртуальная консоль. Как правило, каналы яркости подчиняются правилу HTP. Это включает в себя общие каналы яркости, используемые для управления _интенсивностью света_ с помощью регуляторов, а также каналы, контролирующие интенсивность цвета, как правило, на светодиодном приборе.
 
-The HTP rule is simple: the highest level (nearer 100%) that is currently being sent to a channel is the one that gets sent out to the DMX universe.
+Правило HTP просто: самый высокий уровень (ближе к 100%), который в настоящее время отправляется на канал, является тем, который отправляется в вселенную DMX.
 
-Let's say you have two sliders that control the same intensity channel. First, you set slider 1 to 50% and then move slider 2 from 0% to 75%. As long as slider 2 is below 50% nothing happens, but after crossing the 50% level set by slider 1, the light intensity increases up to 75%. If you drag slider 2 again towards 0%, the light intensity decreases until it reaches the 50% set by slider 1 and stays at 50% until slider 1 is dragged down.
+Предположим, что у вас есть два фейдера, которые управляют одним и тем же каналом интенсивности. Сначала вы устанавливаете фейдер 1 до 50%, а затем перемещаете фейдер 2 с 0% до 75%. До тех пор, пока фейдер 2 ниже 50%, ничего не происходит, но после пересечения уровня 50%, заданного фейдером 1, интенсивность света увеличивается до 75%. Если вы снова перетащите фейдер 2 до 0%, сила света снижается до 50%, установленного фейдером 1, и остается на уровне 50%, пока фейдер 1 не будет выведен вниз.
 
-A crossfade between 2 [Scenes](#scene) will replace the HTP levels in the first scene with the HTP levels of the second. The new HTP levels will be combined with HTP levels from other functions and virtual console widgets as above. See also [LTP](#ltp-latest-takes-precedence).
+Переход между двумя сценами](#scene) заменит уровни HTP в первой сцене на уровни HTP во второй. Новые уровни HTP будут комбинированы с уровнями HTP из других функций и виджета Виртуальной консоли, как указано выше. См. также [LTP](#ltp-latest-takes-precedence).
 
-### ![](../inputoutput.svg) Input/Output plugins
+### ![](../inputoutput.svg) Плагины ввода/вывода
 
-QLC+ supports a variety of plugins to send and receive data from/to the external world.  
-A plugin can be an interface to physical devices (such as DMX adapters or MIDI controllers) or to a network protocol (such as [Art-Net](/plugins/art-net), [OSC](/plugins/osc) or [E1.31](/plugins/e1-31-sacn)).  
-Plugins support input, output or feedback capabilities depending on the device or the protocol they're controlling.  
+QLC+ поддерживает различные плагины для отправки и получения данных из/во внешний мир.  
+Плагин может быть интерфейсом с физическими устройствами (например, адаптеры DMX или контроллеры MIDI) или с сетевым протоколом (например, [Art-Net](/plugins/art-net), [OSC](/plugins/osc) или [E1.31](/plugins/e1-31-sacn)).  
+Плагины поддерживают возможности ввода, вывода или обратной связи в зависимости от устройства или протокола, которым они управляют.  
 
-The primary input methods for QLC+ are naturally the keyboard and mouse. Users can assign keyboard keys to virtual console buttons and drag sliders and do pretty much everything with a mouse.
+Основными методами ввода для QLC+ являются, естественно, клавиатура и мышь. Пользователи могут назначать клавиши на кнопки виртуальной консоли и перетаскивать ползунки, а также выполнять практически все действия с помощью мыши.
 
-Although, with plugins it is possible to attach additional input devices to one's computer to alleviate the rather clumsy and slow user experience that is achieved with a regular mouse and a keyboard. Plugins supporting an input line provide capabilities for getting external devices to produce input data to various QLC+ elements.
+Хотя с помощью плагинов можно подключать дополнительные устройства ввода к компьютеру, чтобы облегчить довольно неуклюжий и медленный пользовательский опыт, который достигается обычной мышью и клавиатурой. Плагины, поддерживающие входную линию, предоставляют возможности для получения внешних устройств для создания входных данных для различных элементов QLC+.
 
-An input line is a connection provided by some hardware or network which is accessed through an input plugin. It can be, for example, a MIDI IN connector in the user's computer (or peripheral) to which users can connect MIDI-capable input devices like slider boards etc.
+Входная линия - это соединение, предоставляемое каким-либо оборудованием или сетью, к которому можно получить доступ через входной модуль. Это может быть, например, MIDI IN-коннектор в компьютере пользователя (или периферийном устройстве), к которому пользователи могут подключать устройства ввода с поддержкой MIDI, такие как панели скольжения и т.д.
 
-An output line is a connection provided by a hardware or network which is accessed through an output plugin. In other words, it is a real DMX universe, but has been dubbed output to separate it from QLC+'s internal universes. You could think of them as individual XLR output connectors in your DMX hardware.
+Выходная линия - это соединение, обеспечиваемое аппаратным обеспечением или сетью, к которой можно получить доступ через выходной модуль. Другими словами, это настоящая DMX-вселенная, но был использован дублирующий выход, чтобы отделить её от внутренних вселенных QLC+. Их можно рассматривать как отдельные выходные XLR-разъёмы в вашем оборудовании DMX.
 
-### Input profiles
+### Входные профили
 
-Input profiles can be thought of as [fixtures'](#fixtures) cousins; they contain information on specific devices that produce input data. An input device can be, for example, a slider board like the Behringer BCF-2000, KORG nanoKONTROL, an Enttec Playback Wing...
+Входные профили можно считать родственниками [световых приборов](#fixtures); они содержат информацию о конкретных устройствах, которые генерируют входные данные. Входным устройством может быть, например, панель с фейдерами — такая как Behringer BCF-2000, KORG nanoKONTROL, Enttec Playback Wing...
 
-### LTP (Latest Takes Precedence)
+### LTP (Latest Takes Precedence — правило приоритета последнего действия)
 
-LTP is a rule that decides what level is sent to out to a DMX universe by a channel when the channel is being controlled by more than one [function](#functions) or Virtual Console widget. Generally, it is used for channels that have been assigned to groups other than the **Intensity** group, such as pan, tilt, gobo, strobe speed and other _intelligent fixture parameters_
+Правило LTP определяет, какое значение будет передано в DMX-вселенную по конкретному каналу, если этим каналом управляют одновременно несколько [функций](#functions) или элементов управления Виртуальной консоли (Virtual Console). Как правило, этот принцип применяется к каналам, которые не относятся к группе **Яркость** (интенсивность/яркость) — например, к параметрам движения (pan, tilt), выбору гобо, скорости стробоскопа и другим настройкам интеллектуальных световых приборов.
 
-The LTP rule is simple: the latest level that has been set by a function or a Virtual Console widget gets sent out to the DMX universe.
+Суть правила LTP проста: в DMX-вселенную передается то значение, которое было задано последним — будь то через функцию или элемент виртуальной консоли.
 
-During a crossfade between [Scenes](#scene), LTP levels will often be changed. This has to be handled with some care as some LTP levels need to jump immediately to a new level, for example, changing from one gobo to another. LTP groups such as pan and tilt, however, might need to change gradually from one level to another during a crossfade. Different timings can be achieved by combining scenes in a [Collection](#collection). See also [HTP](#htp-highest-takes-precedence).
+При переходе между [сценами](#scene) значения параметров LTP часто меняются. К этому процессу нужно подходить внимательно: некоторые параметры LTP должны переключаться на новое значение мгновенно (например, при смене одного гобо на другое), в то время как другие — например, параметры движения (pan и tilt) — могут требовать плавного перехода от одного значения к другому. Различных временных характеристик можно добиться, объединяя сцены в [коллекции](#collection). См. также [HTP](#htp-highest-takes-precedence).
 
-### ![](../palette.svg) Palette
+### ![](../palette.svg) Палитра (Palette)
 
-A Palette is an entity in QLC+ representing a fixture feature. For example a Palette can be a color, a position, a zoom angle and so on.
-Palettes can be used into [Scenes](#scene) to abstract a feature regardless of the Fixtures controlled by the Scene.
+Палитра — это объект в QLC+, представляющий определённую характеристику светового прибора. Например, палитра может задавать цвет, положение, угол раскрытия луча (zoom) и так далее.
+Палитры можно использовать в [сценах](#scene), чтобы абстрагировать конкретную характеристику, сделав её независимой от того, какие именно приборы управляются данной сценой.
 
-### ![](../rgbmatrix.svg) RGB Matrix
+### ![](../rgbmatrix.svg) RGB-матрица (RGB Matrix)
 
-An RGB matrix [function](#functions) can be used to impose simple graphics and text on a matrix (a grid or a wall) of RGB and/or monochrome fixture [heads](#head). The RGB matrix function has been designed to be extendable with [scripts](#rgb-script) that can be written by users.
+Функция RGB-матрица (одна из [функций](#functions) в QLC+) позволяет выводить простую графику и текст на матрицу (сетку или экран), состоящую из RGB- и/или монохромных световых [излучателей](#head). Функционал RGB-матрицы спроектирован таким образом, что его можно расширять с помощью [скриптов](#rgb-script), создаваемых самими светооператорами.
 
-Each RGB matrix has its own speed settings:
+Для каждой RGB-матрицы предусмотрены собственные настройки скорости:
 
-*   **Fade In:** Time to fade each pixel ON
-*   **Fade Out:** Time to fade each pixel OFF
-*   **Duration:** The duration of the current step/frame
+*   **Появление (Fade In):** время, за которое каждый пиксель плавно включается (переходит в активное состояние).
+*   **Затухание (Fade Out):** время, за которое каждый пиксель плавно выключается (переходит в неактивное состояние).
+*   **Длительность (Duration):** продолжительность текущего шага или кадра.
 
-### ![](../rgbmatrix.svg) RGB Script
+### ![](../rgbmatrix.svg) RGB-скрипт
 
-A RGB script is a program written in [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) (also known as JavaScript) that produces the necessary image data for [RGB Matrix](#rgb-matrix) functions. Learn more from the [RGB Script API](/function-manager/rgb-script-api) page.
+RGB-скрипт — это программа, написанная на языке [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) (также известном как JavaScript), которая генерирует данные изображения, необходимые для работы функций [RGB-матрицы](#rgb-matrix). Подробнее об этом можно узнать на странице [API для RGB-скриптов](/function-manager/rgb-script-api).
 
-### ![](../scene.svg) Scene
+### ![](../scene.svg) Сцена
 
-A scene [function](#functions) comprises the values of selected channels that are contained in one or more fixture instances. When a scene is started, the time it takes for its channels to reach their target values depends on the scene's speed settings:
+Сцена (как [функция](#functions)) представляет собой набор значений для выбранных каналов, относящихся к одному или нескольким экземплярам световых приборов. При запуске сцены время, необходимое каналам для достижения целевых значений, определяется настройками скорости этой сцены:
 
-Each function has its own speed settings:
+Для каждой функции предусмотрены собственные настройки скорости:
 
-*   **Fade In:** The time used to fade all channels to their target values, from whatever value they had
-*   **Fade Out:** The time used to fade HTP/intensity channels back to zero. Note that ONLY [HTP](#htp-highest-takes-precedence) channels are affected by this setting.
+*   **Появление (Fade In):** время, в течение которого все каналы переходят к своим целевым значениям (от их текущих состояний).
+*   **Затухание (Fade Out):** время, в течение которого каналы типа HTP (интенсивность) возвращаются к нулевому значению. Обратите внимание, что эта настройка затрагивает ТОЛЬКО каналы типа [HTP](#htp-highest-takes-precedence) (правило _приоритет имеет наибольшее значение_).
 
-Copies of scene functions can be created with the [Function Manager](/function-manager). All of the scene's contents are copied to the duplicate.
+Копии функций типа Сцена можно создавать с помощью [Менеджера функций (Function Manager)](/function-manager). При создании копии все содержимое исходной сцены переносится в дубликат.
 
-### ![](../sequence.svg) Sequence
+### ![](../sequence.svg) Sequence (Последовательность)
 
-A Sequence has some of the functionality of a [Chaser](#chaser).  
-It is equivalent to a Chaser in which each step is a single [Scene](#scene) and every one of those Scenes controls the same set of channels. A Sequence is bound to one specific Scene, which means that all the steps of the Sequence can only control the enabled channels of that Scene.  
-When creating new steps in a Sequence, no Function selection pop-up will appear, since a Sequence step cannot include other Functions, unlike a Chaser step.  
-When a Sequence is created, a special sequence icon will appear in the [Function Manager](/function-manager) as a child of the Scene to which it is bound.  
-To understand the difference between a Sequence and a Chaser, you are invited to read the second paragraph of the [Show Manager](/show-manager) documentation.
+Объект типа Секвенция (последовательность) обладает частью функциональных возможностей объекта Chaser (чейзер).
+По сути, это разновидность чейзера, в которой каждый шаг представляет собой отдельную Сцену, причем все эти сцены управляют одним и тем же набором каналов. Секвенция привязана к конкретной сцене: это означает, что все шаги последовательности могут управлять только теми каналами, которые активированы в данной сцене.
+При создании новых шагов в Секвенции не появляется окно выбора функций, поскольку шаг последовательности (в отличие от шага чейзера) не может содержать в себе другие функции.
+После создания Секвенции в разделе Менеджер функций появляется специальный значок; он отображается как дочерний элемент той сцены, к которой привязана данная последовательность.
+Чтобы лучше понять разницу между Секвенцией и Чейзером, рекомендуем ознакомиться с разделом документации Менеджер шоу (/show-manager).
 
-### ![](../script.svg) Script
+### ![](../script.svg) Скрипт (Script)
 
-The Script [function](#functions) works on a simple yet powerful scripting language to automate QLC+ functionalities in a sequential order. A Script can be modified with the [Script Editor](/function-manager/script-editor).
+Скрипт — это [функция](#functions), основанная на простом, но мощном языке сценариев, позволяющая автоматизировать выполнение возможностей QLC+ в заданном порядке. Скрипты можно редактировать с помощью Редактора скриптов](/function-manager/script-editor).
 
-### ![](../show.svg) Show
+### ![](../show.svg) Шоу (Show)
 
-A Show is an advanced [function](#functions) which encapsulates most of the QLC+ Functions to create a time driven light show. A Show can be created only with the [Show Manager](/show-manager) and can be inspected and renamed with the [Show Editor](/function-manager/show-editor).
+Шоу — это расширенная [функция](#functions), объединяющая множество других функций QLC+ для создания светового представления, привязанного ко времени. Создать шоу можно только в [Менеджере шоу](/show-manager), а просматривать и переименовывать его — в [Редакторе шоу)](/function-manager/show-editor).
 
-### ![](../video2.svg) Video
+### ![](../video2.svg) Видео (Video)
 
-A video [function](#functions) is an object representing a video file stored in a disk or a network URL.  
-The supported video formats depends on your Operating System. For example Mac OSX is limited to MOV/MP4 files and not much more.  
-Video functions can be placed in [Chaser](#chaser) or in a [Show](#show) at the desired time, using the [Show Manager](/show-manager) panel.
+Видео — это [функция](#functions), представляющая собой видеофайл, хранящийся на диске или доступный по сетевому URL-адресу.
+Поддерживаемые форматы видео зависят от используемой вами операционной системы. Например, в macOS поддержка ограничена преимущественно файлами форматов MOV и MP4.
+Видеофункции можно добавлять в [Чейзеры](#chaser) или в [Шоу](#show), размещая их в нужный  такт времени с помощью панели [Менеджера шоу](/show-manager).
